@@ -20,9 +20,12 @@ ADVANCED TRACK: 14-20
 
 
 // 1. Create an object called "me" that describes you with your name, city, and job title.
-//    Display the content of the object in the HTML page. 
-
-
+//    Display the content of the object in the HTML page.
+var me = {name: 'Karla',
+    city: 'Boulder',
+    jobTitle: 'QA Engineer'
+};
+document.getElementById("q1").innerHTML = me.name + ", " + me.city + ", " + me.jobTitle;
 
 
 
@@ -31,19 +34,26 @@ ADVANCED TRACK: 14-20
 //                              city: 'Denver',
 //                              jobTitle: 'professional wrestler',
 //                              family: ['Joan', 'Kyle', 'Hank'] }
-
-
-
-
+var me = {name: 'Karla',
+    city: 'Boulder',
+    jobTitle: 'QA Engineer',
+    family: ['Peter','Stella','Tristan']
+};
+document.getElementById("q2").innerHTML = me['name'] + ", " + me['city'] + ", " + me['jobTitle'] + ", " +  me.family.join(", ");
+/* or you can extract the values of the array using a for loop:
+var result = " ";
+for(var i=0; ... ){
+  result=result + family[i];
+}
+return result; */
 
 
 // 3. Using the "me" object, use dot notation and bracket notation to access the value of your city and display the results in the HTML page.
-
-
-
-
-
-
+var me = {name: 'Karla',
+    city: 'Boulder',
+    jobTitle: 'QA Engineer'
+};
+document.getElementById("q3").innerHTML = me.city + ", " + me['city'];
 
 
 // Use the following Object for questions 4-9:
@@ -83,39 +93,50 @@ var invitees = { adults: [{
 
 
 // 4. Access Penny's dinner choice (this will be the second item in his dinnerChoice array)
+document.getElementById("q4").innerHTML = invitees.adults[0].dinnerChoice[1];
 
 // 5. Access Pablo's table number.
+document.getElementById("q5").innerHTML = invitees.children[1].table;
 
 // 6. Access Lauren's seating specialConsideration.
+document.getElementById("q6").innerHTML = invitees.adults[2].specialConsiderations.seating;
 
 // 7. Access Billy's dessert choice (this will be the third item in his dinnerChoice array)
+document.getElementById("q7").innerHTML = invitees.adults[1].dinnerChoice[2];
 
 // 8. Access Ada's allergies.
+document.getElementById("q8").innerHTML = invitees.children[2].allergies;
 
 // 9. Create a string that reads Lauren's dinner choice in a sentence.
+var appetizer = invitees.adults[2].dinnerChoice[0];
+var dinner = invitees.adults[2].dinnerChoice[1];
+var dessert = invitees.adults[2].dinnerChoice[2];
+
+document.getElementById("q9").innerHTML = "Lauren's appetizer is " + appetizer + ". She will be eating " + dinner + " for dinner and has selected " + dessert + " as her dessert.";
 // Desired result: "Lauren's appetizer is _______. She will be eating ______ for dinner
 // and has selected ________ as her dessert."
 
-
-
-
-
-
 // 10. Create an empty object called "jsWorkshop" using Constructor Notation.
+var jsWorkshop = new Object();
+document.getElementById("q10").innerHTML = jsWorkshop;
 
 // 11. To your "jsWorkshop" object, assign a key of "classmates" with the value being an array of five your classmates.
+var jsWorkshop = new Object();
+jsWorkshop.classmates = ['One', 'Two', 'Three', 'Four', 'Five'];
+document.getElementById("q11").innerHTML = jsWorkshop.classmates.join(", ");
 
 // 12. Get the length of the fourth classmate's name.
+document.getElementById("q12").innerHTML = jsWorkshop.classmates[3].length;
 
 // 13. Clear the classmates value.
-
-
-
-
+jsWorkshop.classmates = [];
+document.getElementById("q13").innerHTML = jsWorkshop.classmates.length;
 
 
 // ADVANCED TRACK
 // A. Create an empty object called "books".
+var books = {};
+document.getElementById("qa").innerHTML = books;
 
 // B. Create three book objects that contain book titles, their author, and number of pages.
 //     The name of each object should be some kind of made up ISBN number.
@@ -140,20 +161,56 @@ var invitees = { adults: [{
     //                           }
     //             }
 
+
+var books = { ISBN1111: {
+                          title: "A Man Called Ove",
+                          author: "Fredrick Backman",
+                          pages: 300
+                        },
+              ISBN2222: {
+                          title: "Just Mercy",
+                          author: "Bryan Stevenson",
+                          pages: 320
+                        },
+              ISBN3333: {
+                            title: "Dept of Speculation",
+                            author: "Jenny Offill",
+                            pages: 200
+                        }
+};
+document.getElementById("qb").innerHTML = books;
+
 // C. Access the author of the first book.
+document.getElementById("qc").innerHTML = books.ISBN1111.author;
 
 // D. Get the length of the author the the third book.
+document.getElementById("qd").innerHTML = books.ISBN3333.author;
 
 // E. To each book object variable, add a key of "dateRead" with a value of the year you read the book.
 //     (Go ahead and make this up, too. Get wild.)
+var books = { ISBN1111: {
+                          title: "A Man Called Ove",
+                          author: "Fredrick Backman",
+                          pages: 300,
+                          dateRead: 2016
+                        },
+              ISBN2222: {
+                          title: "Just Mercy",
+                          author: "Bryan Stevenson",
+                          pages: 320,
+                          dateRead: 2015
+                        },
+              ISBN3333: {
+                            title: "Dept of Speculation",
+                            author: "Jenny Offill",
+                            pages: 200,
+                            dateRead: 2017
+                        }
+};
+document.getElementById("qe").innerHTML = books;
 
 // F. Remove the second book from the books object.
+books.ISBN2222 = '';
+document.getElementById("qf").innerHTML = books.ISBN2222.title.length;
 
 // G. Explain, in your own words, the difference between Literal Notation and Constructor Notation.
-
-
-
-
-
-
-

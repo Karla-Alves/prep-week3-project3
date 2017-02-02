@@ -3,7 +3,7 @@
 
 
 main {
-  width: 600px; 
+  width: 600px;
   margin: auto;
   padding-bottom: 300px;
 }
@@ -32,16 +32,16 @@ p {
 }
 
 .center {
-  text-align: center;	
+  text-align: center;
 }
 
 .status-bad {
     color: red;
-} 
+}
 
 .status-good {
     color: green;
-} 
+}
 
 .status-ok {
 	color: orange;
